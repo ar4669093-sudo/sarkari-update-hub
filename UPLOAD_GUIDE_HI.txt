@@ -1,0 +1,28 @@
+SARKARI UPDATE HUB — IMPORTANT ANDROID UPLOAD GUIDE
+
+This ZIP keeps the required folder structure. Do not upload every file as a flat list.
+
+At the project root, these items must be together:
+- app/                 (contains layout.tsx, globals.css, page.tsx, admin/, login/)
+- lib/
+- public/
+- supabase/
+- package.json
+- tsconfig.json
+- next.config.mjs
+- middleware.ts
+
+The two page.tsx files are different pages and must remain in their folders:
+- app/page.tsx
+- app/login/page.tsx
+- app/admin/page.tsx
+
+Do not rename them or move them to the root.
+
+For GitHub web upload, upload the project contents while preserving folders. If the mobile GitHub upload interface cannot upload folders, use GitHub's web editor to create the missing paths, or use GitHub Codespaces / a Git client that can push the whole extracted project. Do not upload only the files from inside app/ to the repository root.
+
+After the files are correctly arranged in GitHub, return to Vercel and redeploy. Set these environment variables in Vercel using values from Supabase Project Settings > API:
+NEXT_PUBLIC_SUPABASE_URL
+NEXT_PUBLIC_SUPABASE_ANON_KEY
+
+Never share service_role keys or database passwords publicly.
