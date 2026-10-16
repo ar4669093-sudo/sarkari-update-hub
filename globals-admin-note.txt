@@ -1,0 +1,1 @@
+Admin styles are included in app/globals.css in the next setup step if you want to extend the admin console.
